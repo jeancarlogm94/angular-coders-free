@@ -1,1 +1,29 @@
-<p>botones works!</p>
+<div class="container">
+  <button
+    [ngClass]="{ disabled: buttonDisabled, btn: true, 'btn-danger': true }"
+    class="btn btn-danger"
+    (click)="textColor = 'text-danger'"
+  >
+    Color Rojo
+  </button>
+  <button
+    [class]="{ disabled: buttonDisabled }"
+    class="btn btn-success mx-2"
+    (click)="textColor = 'text-success'"
+  >
+    Color Verde
+  </button>
+  <button
+    [class]="{ disabled: buttonDisabled }"
+    class="btn btn-primary"
+    (click)="textColor = 'text-primary'"
+  >
+    Color Azul
+  </button>
+
+  <p [class]="textColor">Texto que va a cambiar de color</p>
+
+  <button class="btn btn-secondary" (click)="buttonDisabled = !buttonDisabled">
+    Activar / Desactivar
+  </button>
+</div>
