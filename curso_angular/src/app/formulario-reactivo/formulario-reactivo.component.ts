@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  Form,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-formulario-reactivo',
@@ -7,9 +13,19 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./formulario-reactivo.component.css'],
 })
 export class FormularioReactivoComponent {
-  formState = new FormGroup({
-    name: new FormControl('', Validators.required),
-    email: new FormControl('', [Validators.required, Validators.email]),
+  constructor(private fb: FormBuilder) {}
+
+  // name = new FormControl('', Validators.required);
+  // email = new FormControl('', [Validators.required, Validators.email]);
+
+  // formState = new FormGroup({
+  //   name: new FormControl('', Validators.required),
+  //   email: new FormControl('', [Validators.required, Validators.email]),
+  // });
+
+  formState = this.fb.group({
+    name: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
   });
 
   get name() {
