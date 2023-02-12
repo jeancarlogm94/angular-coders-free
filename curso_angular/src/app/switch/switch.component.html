@@ -1,0 +1,20 @@
+<input
+  type="text"
+  class="form-control"
+  placeholder="Ingresa un numero del 1 - 7"
+  #newDay
+/>
+<button class="btn btn-primary my-2" (click)="day = newDay.value">
+  Mostrar dia
+</button>
+
+<div [ngSwitch]="day" *ngIf="day">
+  <h4 *ngSwitchCase="'1'">Lunes</h4>
+  <h4 *ngSwitchCase="'2'">Martes</h4>
+  <h4 *ngSwitchCase="'3'">Miercoles</h4>
+  <h4 *ngSwitchCase="'4'">Jueves</h4>
+  <h4 *ngSwitchCase="'5'">Viernes</h4>
+  <h4 *ngSwitchCase="'6'">Sabado</h4>
+  <h4 *ngSwitchCase="'7'">Domingo</h4>
+  <h4 *ngSwitchDefault>Valor no valido</h4>
+</div>
