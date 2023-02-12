@@ -1,0 +1,22 @@
+<div class="container">
+  <button
+    class="btn btn-primary"
+    (click)="
+      src =
+        'https://images.pexels.com/photos/14356746/pexels-photo-14356746.jpeg?auto=compress&cs=tinysrgb&w=300&lazy=load'
+    "
+  >
+    Imagen 1
+  </button>
+  <button
+    class="btn btn-danger"
+    (click)="
+      src =
+        'https://images.pexels.com/photos/15388654/pexels-photo-15388654.jpeg?auto=compress&cs=tinysrgb&w=300&lazy=load'
+    "
+  >
+    Imagen 2
+  </button>
+
+  <img [src]="src" alt="" />
+</div>
