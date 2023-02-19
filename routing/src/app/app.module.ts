@@ -9,10 +9,25 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CoursesDetailComponent } from './courses-detail/courses-detail.component';
+import { ContactInfoComponent } from './contact-info/contact-info.component';
+import { ContacDetailsComponent } from './contac-details/contac-details.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'contact', component: ContactComponent },
+  {
+    path: 'contact',
+    component: ContactComponent,
+    children: [
+      {
+        path: '',
+        component: ContactInfoComponent,
+      },
+      {
+        path: 'details',
+        component: ContacDetailsComponent,
+      },
+    ],
+  },
   { path: 'about', component: AboutComponent },
   { path: 'courses', component: CoursesComponent },
   { path: 'courses/:course', component: CoursesDetailComponent },
@@ -29,6 +44,7 @@ const routes: Routes = [
     PageNotFoundComponent,
     CoursesComponent,
     CoursesDetailComponent,
+    ContacDetailsComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(routes)],
   providers: [],
